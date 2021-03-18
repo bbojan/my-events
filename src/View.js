@@ -16,8 +16,8 @@ function View() {
 
         if (isVertical) {
           window.scrollBy(0, dy);
-          e.stopPropagation();
-          e.preventDefault();
+          // e.stopPropagation();
+          // e.preventDefault();
         } else {
           if (isFirst) {
             stopSwipe();

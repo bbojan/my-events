@@ -11,7 +11,7 @@ export function useSwipe(ref, options, handlers = { move: () => {} }) {
 
   const sevents = React.useMemo(
     () => ({
-      mousedown: function (e) {
+      pointerdown: function (e) {
         index.current = 0;
 
         if (prevent) {
@@ -25,7 +25,7 @@ export function useSwipe(ref, options, handlers = { move: () => {} }) {
 
   const wevents = React.useMemo(
     () => ({
-      mousemove: function (e) {
+      pointermove: function (e) {
         const idx = index.current;
         const hadDown = idx >= 0;
 
@@ -64,7 +64,7 @@ export function useSwipe(ref, options, handlers = { move: () => {} }) {
           e.preventDefault();
         }
       },
-      mouseup: function (e) {
+      pointerup: function (e) {
         const idx = index.current;
         const hadDown = idx >= 0;
         const hadMove = idx >= 1;
